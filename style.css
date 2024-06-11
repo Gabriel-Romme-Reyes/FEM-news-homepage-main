@@ -1,0 +1,291 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    min-height: 100vh;
+    font-family: "Inter", sans-serif;
+
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    overflow-x: hidden;
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.nav img{
+    cursor: pointer;
+}
+
+#sidepanel{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 0;
+    background-color: white;
+    min-height: 100vh;
+    transition: 0.3s;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+}
+
+#sidepanel  li:hover{
+    color: hsl(35, 77%, 62%);
+    cursor: pointer;
+}
+
+#sidepanel *{
+    
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+#sidepanel-close{
+   position: relative;
+   top: 25px;
+   left: 70%;
+   margin-bottom: 5rem;
+
+}
+
+#overlay{
+    min-height: 100vh;
+    min-width: 100vw;
+    z-index: 1;
+    background-color: hsla(0, 0%, 0%, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+display: none;
+
+}
+
+
+
+.web-3 img{
+    width: 100%;
+}
+
+#web-3-desktop{
+    display: none;
+}
+
+.web-3 *{
+    margin-bottom: 1rem;
+}
+
+.web-3 h1{
+    color: hsl(240, 100%, 5%);
+    font-size: 30px;
+}
+
+.web-3 p{
+    color: hsl(236, 13%, 42%);
+    line-height: 2;
+}
+
+.web-3 button{
+    color: hsl(240, 100%, 5%);
+    padding: 1rem;
+    background-color: hsl(5, 85%, 63%);
+    border: none;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+.web-3 button:hover{
+    cursor: pointer;
+    color: white;
+    background-color: hsl(240, 100%, 5%);
+}
+
+.new-article{
+    background-color: hsl(240, 100%, 5%);
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.new-article h1{
+    color: hsl(35, 77%, 62%);
+    margin-bottom: 1rem;
+}
+
+.new-article h1 , .new-article section{
+    padding: 1rem;
+}
+
+.new-article-section *{
+    margin-bottom: 1rem;
+}
+
+.new-article-section h2{
+    color: hsl(36, 100%, 99%);
+}
+
+.new-article-section h2:hover{
+    color: hsl(35, 77%, 62%);
+    cursor: pointer;
+}
+
+.new-article-section p{
+    color: hsl(233, 8%, 79%);
+}
+
+.number-section{
+    display: flex;
+    flex-direction: column;
+}
+
+.number-section h1{
+    font-size: 30px;
+    color: hsl(5, 85%, 63%);
+    margin-bottom: 0.5rem;
+    
+}
+
+.number-section h2{
+    font-size: 20px;
+    margin-bottom: 0.5rem;
+}
+
+.number-section h2:hover{
+    cursor: pointer;
+    color: hsl(5, 85%, 63%);
+}
+
+
+.number-section p{
+    line-height: 2;
+    color: hsl(236, 13%, 42%);
+}
+
+.number-article{
+    display: flex;
+    margin-bottom: 1rem;
+    
+}
+
+.number-article img{
+    width: 100px;
+
+    margin-right: 1rem;
+}
+
+.number-article section{
+    display: flex;
+    flex-direction: column;
+}
+
+.attribution {
+    display: none;
+}
+
+@media only screen  and (min-width:1280px){
+
+
+    .content{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: 
+        "nav nav nav"
+        "web3 web3 new-article"
+        "footer footer footer"
+        ;
+
+        padding: 10rem;
+
+        grid-gap: 20px;
+    }
+
+    .nav{
+        grid-area: nav;
+    }
+
+    #menu{
+        display: none;
+    }
+
+    #sidepanel{
+        position:relative;
+        right: 0;
+        display: flex;
+        flex-direction: row;
+        min-height: auto;
+        width: auto;
+        align-items: center;
+
+    }
+
+    #sidepanel li{
+        margin-left: 0;
+        margin-bottom: 0;
+        margin-right: 1rem;
+    }
+
+    #sidepanel-close{
+        display: none;
+    }
+
+    .web-3{
+        grid-area: web3;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "img img"
+        "h1 section"
+        "h1 section"
+
+        ;
+    }
+
+    .web-3 img{
+        grid-area: img;
+
+    }
+
+    .web-3 img:first-of-type{
+        display: none;
+    }
+
+    #web-3-desktop{
+        display: block;
+    }
+
+    .web-3 h1{
+        grid-area: h1;
+        font-size: 60px;
+    }
+
+    .web-3 section{
+        grid-area: section;
+    }
+
+
+
+    .new-article{
+        grid-area: new-article;
+
+    }
+
+    .new-article h1{
+        font-size: 40px;
+    }
+
+    .number-section{
+        grid-area: footer;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
